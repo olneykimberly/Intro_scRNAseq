@@ -170,13 +170,17 @@ conda config --add channels conda-forge
   find . -mindepth 2 -type f -print -exec mv {} . \;
   ```
 ## 8. Optional terminal formatting
- - The Biostar Handbook provides some fun terminal formatting.  If interested, run the commands below **ONLY ONCE**:exclamation:
+ - The Biostar Handbook provides some fun terminal formatting.  If interested, run the commands below **ONLY ONCE**:exclamation:. People using Ubuntu will also have to go to **properties > colors** to change background and text colors.  I recommend making your background white and text black.
    ```
    curl http://data.biostarhandbook.com/install/bash_profile.txt >> ~/.bash_profile
    curl http://data.biostarhandbook.com/install/bashrc.txt >> ~/.bashrc
    ```
- - For Ubuntu you will have to manually change the background color
  - For the changes to take effect run the command below.
    ```
    source ~/.bash_profile
+   ```
+ - Ubuntu users do not have the tab completion feature.  If you would like to add this feature you can run the commands below.
+   ```
+   sudo apt update
+   sudo apt install bash-completion
    ```
