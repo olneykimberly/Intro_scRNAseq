@@ -39,7 +39,6 @@
   - Notes are included in the script
   - You can also submit this to a cluster to run faster
 ## 4. Cellranger count
-- A snakemake pipeline is challenging with cellranger count.  We will work on a snakemake pipeline later.
 - For now, two scripts are used to submit cellranger count to the cluster
   - **cellranger_count.sh** - This bash script loops through all your sample IDs and submits a job to the cluster for each sample ID.  Technically, the script submits the **counts.ogs** script with the sample ID passed.
   - **counts.ogs** - This script actually calls cellranger count when given a sample ID.
