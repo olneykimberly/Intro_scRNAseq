@@ -25,5 +25,5 @@
 - cd into your **rawData*** folder
 - Use the command below to copy and paste an E. coli pig blood sample ().
   ```
-  cp /where/its/stored/sample.fastq /where/you/want/it/sample.fastq
+  cp /research/labs/neurology/fryer/m214960/practice_single_cell/* .
   ```
