@@ -15,6 +15,11 @@
 - The annotation file is in gtf format.
 - cd into your **refs** folder.  This is where we will download our references.
 - We get these two files from Ensembl because we know they are compatible with cellranger.  We can use the wget command to download any file from the internet.  Run the command below.  Downloading the fasta may take a while.
+  ```
+  wget http://ftp.ensembl.org/pub/release-104/fasta/sus_scrofa/dna/Sus_scrofa.Sscrofa11.1.dna.toplevel.fa.gz
+  wget http://ftp.ensembl.org/pub/release-104/gtf/sus_scrofa/Sus_scrofa.Sscrofa11.1.104.gtf.gz
+  ``` 
+- If the links no longer work you can get them from here https://useast.ensembl.org/Sus_scrofa/Info/Index
 # Download (or copy and paste) raw fastq files for samples
 - We will only use one sample to save time (each sample takes about 5 hours when you run cellranger count).
 - cd into your **rawData*** folder
