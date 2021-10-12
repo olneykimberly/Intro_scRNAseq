@@ -90,6 +90,16 @@
   ```
 ## 4. Cellranger count
 - Below is the usage for cellranger count. Keep in mind we have two samples so you will have to create two separate scripts.  You could submit it all on one script but each sample take 5 hours.  So we will submit these jobs in parallel to avoid taking 10 hours!
+  ```
+  # run cellranger count on sample
+  cellranger count --id=sample_id --sample=sample_id --fastqs=/path/to/fastq/files --transcriptome=/path/to/genomeDir --localcores=16 --localmem=50
+	
+   # $sample is the sampleID (i.e. E19_BB)
+   # --fastqs is path to the scRNA fastq files 
+   # --transcriptome is the path to the pig reference genome. This was created in a prior step
+   # --localcores will restrict cellranger to 16 cores    
+   # --localmem will restrict cellranger to 50G memory which is need in order to run, else you will receive the error of limited mem issue
+  ```
 ## 5. Cellranger aggr
 - The cellranger aggr command is used to pool/aggregate cellranger count runs
   - For example, we can pool all blood samples together
