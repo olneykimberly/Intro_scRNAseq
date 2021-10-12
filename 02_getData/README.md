@@ -20,10 +20,7 @@
   wget http://ftp.ensembl.org/pub/release-104/gtf/sus_scrofa/Sus_scrofa.Sscrofa11.1.104.gtf.gz
   ``` 
 - If the links no longer work you can get them from here https://useast.ensembl.org/Sus_scrofa/Info/Index
-# 4. Download (or copy and paste) raw fastq files for samples
-- We will only use one sample to save time (each sample takes about 5 hours when you run cellranger count).
-- cd into your **rawData*** folder
-- Use the command below to copy and paste an E. coli pig blood sample ().
-  ```
-  cp /research/labs/neurology/fryer/m214960/practice_single_cell/* .
-  ```
+# 4. Utilize the shared fastq files
+- The fastq files we will be using are located here /research/labs/neurology/fryer/m214960/practice_single_cell
+- This folder contains the files for E19_BB (E. coli pig 19 baseline blood) and E19_FB (E. coli pig 19 final blood)
+- We wont' actually copy these files into your folder because if everyone copied them it would take up a lot of space.
