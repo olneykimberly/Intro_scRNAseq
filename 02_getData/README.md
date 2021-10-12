@@ -8,7 +8,7 @@
 # 2. Create subfolders
 - We are going to create some sub-folders within your project folder where we can store useful information like reference files, scripts, and raw data.
   ```
-  mdkir refs scripts rawData counts aggr
+  mkdir refs scripts rawData counts aggr
   ```
 # 3. Download (or copy and paste) reference genome and annotation file
 - The reference genome is in fasta format.
