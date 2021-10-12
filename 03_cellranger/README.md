@@ -62,7 +62,7 @@
   ```
   ./cellranger_build_ref.sh
   ```
-- Using this info submit this job to the cluster using the qsub command.  I have given the script below you will just have to edit the header.  Learn from this example because you will be creating your own scripts after this.
+- Using this info submit this job to the cluster using the qsub command.  I have given the script below you will just have to edit the header and paths.  Learn from this example because you will be creating your own scripts after this.
   ```
   #!/bin/sh
   #$ -cwd
