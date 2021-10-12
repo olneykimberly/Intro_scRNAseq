@@ -54,12 +54,60 @@
   #$ -q 1-day,4-day,lg-mem
   #$ -V
   ```
-- Run the **cellranger_build_ref.sh** script
+- This is command we will use to filter the gtf.
   ```
   ./cellranger_build_ref.sh
   ```
-  - Notes are included in the script
-  - You can also submit this to a cluster to run faster
+- This is command we will use to index the genome.
+  ```
+  ./cellranger_build_ref.sh
+  ```
+- Using this info submit this job to the cluster using the qsub command.  I have given the script below you will just have to edit the header.  Learn from this example because you will be creating your own scripts after this.
+  ```
+  #!/bin/sh
+  #$ -cwd
+  #$ -N cellranger_build_ref
+  #$ -m abe 
+  #$ -M email@mayo.edu
+  #$ -pe threaded 16
+  #$ -l h_vmem=16G
+  #$ -q 1-day,4-day,lg-mem
+  #$ -V
+
+  source $HOME/.bash_profile
+
+  # cd /your/working/directory
+  cd /path/to/refs
+
+  # step 1: 
+  # filter the gene annotation file to exclude the following gene_biotypes
+  # this is per the recommendation of cellranger to not include these biotypes: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references
+  cellranger mkgtf Sus_scrofa.Sscrofa11.1.103.gtf Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf  \
+                     --attribute=gene_biotype:protein_coding \
+                     --attribute=gene_biotype:lincRNA \
+                     --attribute=gene_biotype:antisense \
+                     --attribute=gene_biotype:IG_LV_gene \
+                     --attribute=gene_biotype:IG_V_gene \
+                     --attribute=gene_biotype:IG_V_pseudogene \
+                     --attribute=gene_biotype:IG_D_gene \
+                     --attribute=gene_biotype:IG_J_gene \
+                     --attribute=gene_biotype:IG_J_pseudogene \
+                     --attribute=gene_biotype:IG_C_gene \
+                     --attribute=gene_biotype:IG_C_pseudogene \
+                     --attribute=gene_biotype:TR_V_gene \
+                     --attribute=gene_biotype:TR_V_pseudogene \
+                     --attribute=gene_biotype:TR_D_gene \
+                     --attribute=gene_biotype:TR_J_gene \
+                     --attribute=gene_biotype:TR_J_pseudogene \
+                     --attribute=gene_biotype:TR_C_gene
+
+  # For the GTF file, genes must be annotated with feature type 'exon' (column 3). 
+  # this step is - Prior to mkref below as the GTF annotation files from Ensembl and NCBI are typically filtered with mkgtf to include only a subset of the annotated gene biotypes.
+
+  # step 2: 
+  # now that you have created a filtered gene annotation file, you can build the reference index
+  cellranger mkref --genome=cellranger_genomeDir --fasta=Sscrofa11.1.chrYHardMasked.fa  --genes=Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf
+  ```
 ## 4. Cellranger count
 - For now, two scripts are used to submit cellranger count to the cluster
   - **cellranger_count.sh** - This bash script loops through all your sample IDs and submits a job to the cluster for each sample ID.  Technically, the script submits the **counts.ogs** script with the sample ID passed.
