@@ -41,28 +41,7 @@
 - Make sure you have the annotation file and reference genome already downloaded.  If you don't, go back to the 02_getData folder.
 - Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
 - Filter the gtf file and index the genome.
-- Index our hard masked chrY reference genome.
-- Here's a header to quickly create jobs to submit to cluster
-  ```
-  #!/bin/sh
-  #$ -cwd
-  #$ -N name_of_job
-  #$ -m abe 
-  #$ -M your.email@mayo.edu
-  #$ -pe threaded 16
-  #$ -l h_vmem=16G
-  #$ -q 1-day,4-day,lg-mem
-  #$ -V
-  ```
-- This is command we will use to filter the gtf.
-  ```
-  ./cellranger_build_ref.sh
-  ```
-- This is command we will use to index the genome.
-  ```
-  ./cellranger_build_ref.sh
-  ```
-- Using this info submit this job to the cluster using the qsub command.  I have given the script below you will just have to edit the header and paths.  Learn from this example because you will be creating your own scripts after this.
+- I have given the script below you will just have to edit the header and paths.  Learn from this example because you will be creating your own scripts after this.
   ```
   #!/bin/sh
   #$ -cwd
@@ -74,9 +53,10 @@
   #$ -q 1-day,4-day,lg-mem
   #$ -V
 
+  # source your setting
   source $HOME/.bash_profile
 
-  # cd /your/working/directory
+  # change directory to where files are located
   cd /path/to/refs
 
   # step 1: 
@@ -109,19 +89,18 @@
   cellranger mkref --genome=cellranger_genomeDir --fasta=Sscrofa11.1.chrYHardMasked.fa  --genes=Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf
   ```
 ## 4. Cellranger count
-- For now, two scripts are used to submit cellranger count to the cluster
-  - **cellranger_count.sh** - This bash script loops through all your sample IDs and submits a job to the cluster for each sample ID.  Technically, the script submits the **counts.ogs** script with the sample ID passed.
-  - **counts.ogs** - This script actually calls cellranger count when given a sample ID.
-- Both scripts are located in this folder of the repository. 
+
 ## 5. Cellranger aggr
 - The cellranger aggr command is used to pool/aggregate cellranger count runs
   - For example, we can pool all blood samples together
 - Create a libraries.csv file
-  - Two required columns are sample_id and molecule_h5.  The molecule_h5 column is the path to the molecule_info.h5 file output by cellranger counts.  This is located in **sample_id/outs/molecule_info.h5**.
+  - Two required columns are sample_id and molecule_h5.  The molecule_h5 column is the path to the molecule_info.h5 file output by cellranger counts.
   - Optional metadata columns can be added and later viewed in the Loupe browser (e.g. treatment, timepoint)
 - The cellranger aggr command inputs a CSV file (containing paths to molecule_info.h5 files) and outputs a single feature-barcode matrix containing all the data
 - When multiple GEM wells are combined a GEM well suffix is appended to the barcode sequence
 - GEM wells are subsampled and have the same effective sequencing depth
+
+
 ## 6. Loupe Browser
 - Read in individual .cloupe files from cellranger count or .cloupe files from cellranger aggr (like pooled E. coli final blood)
 
