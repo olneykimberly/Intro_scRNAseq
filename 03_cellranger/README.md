@@ -21,7 +21,7 @@
   ```
   which cellranger
   ```
-## 2. Sitecheck
+## 2. Sitecheck (you can skip if you know it already works for someone else)
 - Make sure you meet all conditions to run the program. Execute these commands for both the host and cluster node to see if you meet the requirements.
   ```
   cellranger sitecheck > sitecheck.txt
@@ -30,8 +30,20 @@
 - 10X Genomics will email you and ask if you want a sitecheck review.
 ## 3. Filter gtf and index genome
 - Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
-- Filter the gtf file and index the hard masked chrY reference genome.
+- Filter the gtf file and index the genome.
 - Index our hard masked chrY reference genome.
+- Here's a header to quickly create jobs to submit to cluster
+  ```
+  #!/bin/sh
+  #$ -cwd
+  #$ -N name_of_job
+  #$ -m abe 
+  #$ -M your.email@mayo.edu
+  #$ -pe threaded 16
+  #$ -l h_vmem=16G
+  #$ -q 1-day,4-day,lg-mem
+  #$ -V
+  ```
 - Run the **cellranger_build_ref.sh** script
   ```
   ./cellranger_build_ref.sh
