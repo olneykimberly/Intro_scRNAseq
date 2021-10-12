@@ -89,7 +89,7 @@
   cellranger mkref --genome=cellranger_genomeDir --fasta=Sus_scrofa.Sscrofa11.1.dna.toplevel.fa  --genes=Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf
   ```
 ## 4. Cellranger count
-
+- Below is the usage for cellranger count. Keep in mind we have two samples so you will have to create two separate scripts.  You could submit it all on one script but each sample take 5 hours.  So we will submit these jobs in parallel to avoid taking 10 hours!
 ## 5. Cellranger aggr
 - The cellranger aggr command is used to pool/aggregate cellranger count runs
   - For example, we can pool all blood samples together
