@@ -62,7 +62,7 @@
   # step 1: 
   # filter the gene annotation file to exclude the following gene_biotypes
   # this is per the recommendation of cellranger to not include these biotypes: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references
-  cellranger mkgtf Sus_scrofa.Sscrofa11.1.103.gtf Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf  \
+  cellranger mkgtf Sus_scrofa.Sscrofa11.1.104.gtf Sscrofa11.1.104.filteredCellranger.gtf  \
                      --attribute=gene_biotype:protein_coding \
                      --attribute=gene_biotype:lincRNA \
                      --attribute=gene_biotype:antisense \
@@ -86,7 +86,7 @@
 
   # step 2: 
   # now that you have created a filtered gene annotation file, you can build the reference index
-  cellranger mkref --genome=cellranger_genomeDir --fasta=Sus_scrofa.Sscrofa11.1.dna.toplevel.fa  --genes=Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf
+  cellranger mkref --genome=cellranger_genomeDir --fasta=Sus_scrofa.Sscrofa11.1.dna.toplevel.fa --genes=Sscrofa11.1.104.filteredCellranger.gtf
   ```
 ## 4. Cellranger count
 - Below is the usage for cellranger count. Keep in mind we have two samples so you will have to create two separate scripts.  You could submit it all on one script but each sample take 5 hours.  So we will submit these jobs in parallel to avoid taking 10 hours!
