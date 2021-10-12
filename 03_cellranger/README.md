@@ -17,12 +17,16 @@
   ```
   cd ~
   ```
-- Use the vi text editor in your terminal to add the path to your .bash_profile.  Replace **<put_your_path_here>** by whatever the output was from the pwd command.
+- Use the vi text editor in your terminal to add the path to your .bash_profile.  You will edit this file and then add the two lines of code below to the end of the file.  Replace **<put_your_path_here>** by whatever the output was from the pwd command.  I recommend doing this in a text editor (Notepad, BBedit, Atom) first, making changes, and then pasting it into your .bash_profile using the built in vi text editor.
   ```
   # path for cellranger
   export PATH=<put_your_path_here>:$PATH
   ```
-- Run this command to make sure everything works. Your output should be the path to cellranger.
+- Now we want the changes we made to be registered.  To this we source our file
+  ```
+  source .bash_profile
+  ```
+- Let's see if everything worked. Run the command below. Your output should be the path to where cellranger is downloaded on your computer.
   ```
   which cellranger
   ```
@@ -34,6 +38,7 @@
   ```
 - 10X Genomics will email you and ask if you want a sitecheck review.
 ## 3. Filter gtf and index genome
+- Make sure you have the annotation file and reference genome already downloaded.  If you don't, go back to the 02_getData folder.
 - Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
 - Filter the gtf file and index the genome.
 - Index our hard masked chrY reference genome.
