@@ -86,7 +86,7 @@
 
   # step 2: 
   # now that you have created a filtered gene annotation file, you can build the reference index
-  cellranger mkref --genome=cellranger_genomeDir --fasta=Sscrofa11.1.chrYHardMasked.fa  --genes=Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf
+  cellranger mkref --genome=cellranger_genomeDir --fasta=Sus_scrofa.Sscrofa11.1.dna.toplevel.fa  --genes=Sus_scrofa.Sscrofa11.1.103.filteredCellranger.gtf
   ```
 ## 4. Cellranger count
 
