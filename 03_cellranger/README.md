@@ -8,14 +8,19 @@
   ```
   tar -xzvf cellranger-6.1.1.tar.gz
   ```
-- Go into the cellranger-6.1.1 directory and get the path
+- Go into the cellranger-6.1.1 directory and get the path.  We will use this path later.
   ```
   cd cellranger-6.1.1
   pwd
   ```
-- Export the path to your new tool.  Replace **/your/path/to/cellranger-6.1.1** by whatever the output was from the pwd command.  You can also append this to your .bashrc file.
+- Everytime we use a cellranger command we will need to put the path to where it downloaded.  However, putting the entire path every time can be lengthy.  So, we will add the path to cellranger in our .bash_profile (think settings file).  Head back to your home directory using the command below.
   ```
-  export PATH=/your/path/to/cellranger-6.1.1:$PATH
+  cd ~
+  ```
+- Use the vi text editor in your terminal to add the path to your .bash_profile.  Replace **<put_your_path_here>** by whatever the output was from the pwd command.
+  ```
+  # path for cellranger
+  export PATH=<put_your_path_here>:$PATH
   ```
 - Run this command to make sure everything works. Your output should be the path to cellranger.
   ```
