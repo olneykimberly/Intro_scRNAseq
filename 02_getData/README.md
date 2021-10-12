@@ -20,7 +20,7 @@
   wget http://ftp.ensembl.org/pub/release-104/gtf/sus_scrofa/Sus_scrofa.Sscrofa11.1.104.gtf.gz
   ``` 
 - If the links no longer work you can get them from here https://useast.ensembl.org/Sus_scrofa/Info/Index
-# Download (or copy and paste) raw fastq files for samples
+# 4. Download (or copy and paste) raw fastq files for samples
 - We will only use one sample to save time (each sample takes about 5 hours when you run cellranger count).
 - cd into your **rawData*** folder
 - Use the command below to copy and paste an E. coli pig blood sample ().
