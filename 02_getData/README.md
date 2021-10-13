@@ -22,6 +22,9 @@
   ``` 
 - If the links no longer work you can get them from here https://useast.ensembl.org/Sus_scrofa/Info/Index
 # 4. Utilize the shared fastq files
-- The fastq files we will be using are located here /research/labs/neurology/fryer/m214960/practice_single_cell
+- The fastq files we will be using are located here 
+  ```
+  /research/labs/neurology/fryer/m214960/practice_single_cell
+  ``` 
 - This folder contains the files for E19_BB (E. coli pig 19 baseline blood) and E19_FB (E. coli pig 19 final blood)
 - We wont' actually copy these files into your folder because if everyone copied them it would take up a lot of space.
