@@ -93,13 +93,13 @@
 ## 4. Cellranger count
 - Below is the usage for cellranger count. Keep in mind we have two samples so you will have to create two separate scripts.  You could submit it all on one script but each sample take 5 hours.  So we will submit these jobs in parallel to avoid taking 10 hours!
   ```
-  # run cellranger count on sample
-  cellranger count --id=sample_id --sample=sample_id --fastqs=/path/to/fastq/files --transcriptome=/path/to/genomeDir --localcores=16 --localmem=50
+  # run cellranger count on a single sample
+  cellranger count --id=sample_id --sample=sample_id --fastqs=/path/to/data/folder --transcriptome=/path/to/genomeDir --localcores=16 --localmem=50
 	
-   # --id is the sample_id (e.g. E19_BB) is the sampleID (i.e. E19_BB)
-   # --sample is the the prefix cellranger will look for in your fastq files.  We named all files just like the id.
+   # --id is the sample_id (e.g. E19_BB)
+   # --sample is the the prefix cellranger will look for in all the fastq files.  We named all files just like the sampe_id.
    # --fastqs is the path to the entire FOLDER containing scRNA fastq files.  The path to files you will be using is in the 02_getData step. 
-   # --transcriptome is the path to the pig reference genome. This was created in the prior step.
+   # --transcriptome is the path to the pig reference genome. This was created in the prior step.  We named it cellranger_genomeDir.
    # --localcores will restrict cellranger to 16 cores    
    # --localmem will restrict cellranger to 50G memory which is need in order to run, else you will receive the error of limited mem issue
   ```
