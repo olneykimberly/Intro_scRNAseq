@@ -14,11 +14,11 @@
   cd cellranger-6.1.1
   pwd
   ```
-- Everytime we use a cellranger command we will need to put the path to where it downloaded.  However, putting the entire path every time can be lengthy.  So, we will add the path to cellranger in our .bash_profile (think settings file).  Head back to your home directory using the command below.
+- Everytime we use a cellranger command we will need to put the path to where it's downloaded.  However, putting the entire path every time can be lengthy.  So, we will add the path to cellranger in our .bash_profile (think settings file).  Head back to your home directory using the command below.
   ```
   cd ~
   ```
-- Use the vi text editor in your terminal to add the path to your .bash_profile.  You will edit this file and then add the two lines of code below to the end of the file.  Replace **<put_your_path_here>** by whatever the output was from the pwd command.  I recommend doing this in a text editor (Notepad, BBedit, Atom) first, making changes, and then pasting it into your .bash_profile using the built in vi text editor.
+- Use the vi text editor in your terminal to add the path to your .bash_profile.  You will edit this file and then add the two lines of code below to the end of the file.  Replace **<put_your_path_here>** (this means removes the < and > symbols) by whatever the output was from the pwd command.  I recommend doing this in a text editor (Notepad, BBedit, Atom) first, making changes, and then pasting it into your .bash_profile using the built in vi text editor.
   ```
   # path for cellranger
   export PATH=<put_your_path_here>:$PATH
@@ -39,7 +39,7 @@
   ```
 - 10X Genomics will email you and ask if you want a sitecheck review.
 ## 3. Filter gtf and index genome
-- Make sure you have the annotation file and reference genome already downloaded.  If you don't, go back to the 02_getData folder.
+- Make sure you have the annotation file and reference genome already downloaded and located in your **refs/**.  If you don't, go back to the 02_getData folder.
 - We will be running the cellranger mkgtf and mkref command.  We will submit both of these commands as jobs to the cluster because we want run everything quickly! It can be done from you terminal like normal but will take forever.
 	- 10X Genomics explanation about what mkgtf and mkref do: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references
 	- Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
