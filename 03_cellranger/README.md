@@ -42,6 +42,7 @@
 - Make sure you have the annotation file and reference genome already downloaded.  If you don't, go back to the 02_getData folder.
 - Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
 - Filter the gtf file and index the genome.
+- Mayo job submission resource: https://mctools.sharepoint.com/teams/DCISSS/HPCServices/SitePages/Submit%20job.aspx
 - I have given the script below you will just have to edit the header and paths.  Learn from this example because you will be creating your own scripts after this.
   ```
   #!/bin/sh
