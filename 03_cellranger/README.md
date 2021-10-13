@@ -40,10 +40,12 @@
 - 10X Genomics will email you and ask if you want a sitecheck review.
 ## 3. Filter gtf and index genome
 - Make sure you have the annotation file and reference genome already downloaded.  If you don't, go back to the 02_getData folder.
-- Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
-- Filter the gtf file and index the genome.
-- Mayo job submission resource: https://mctools.sharepoint.com/teams/DCISSS/HPCServices/SitePages/Submit%20job.aspx
+- We will be running the cellranger mkgtf and mkref command.  We will submit both of these commands as jobs to the cluster because we want run everything quickly! It can be done from you terminal like normal but will take forever.
+	- 10X Genomics explanation about what mkgtf and mkref do: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references
+	- Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
+	- mkgtf will filter the gtf file and mkref will index the genome.
 - I have given the script below you will just have to edit the header and paths.  Learn from this example because you will be creating your own scripts after this.
+	- Mayo job submission resource: https://mctools.sharepoint.com/teams/DCISSS/HPCServices/SitePages/Submit%20job.aspx 
   ```
   #!/bin/sh
   #$ -cwd
