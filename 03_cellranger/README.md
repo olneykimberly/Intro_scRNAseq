@@ -1,5 +1,5 @@
 ## 1. Download cellranger
-- FIRST GO TO YOUR M-FOLDER
+- FIRST GO TO YOUR M-FOLDER ON THE CLUSTER
 - Download cellranger .tar.gz file using the wget command
   ```
   wget -O cellranger-6.1.1.tar.gz "https://cf.10xgenomics.com/releases/cell-exp/cellranger-6.1.1.tar.gz?Expires=1634099562&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZi4xMHhnZW5vbWljcy5jb20vcmVsZWFzZXMvY2VsbC1leHAvY2VsbHJhbmdlci02LjEuMS50YXIuZ3oiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MzQwOTk1NjJ9fX1dfQ__&Signature=n7izd3HdqaY2YTtocmGZYJazfHPgb2vjUDPoljhhk5~WSdzNaQZff52LUzFSYwdznJFbl1A6RK8f1pQm0ZCHZ-0MdpkVXGbRyDmZYD3GrMNXbSP2HkTWEXTxTBVW1RyE8zQUxaiKhVSqEqejUr2HZsOiqd0rxkLHEO1ROek9NXkQjXU0gCgQKPrBWwzcXmCAAVuxGpmbvdDhVG0DLzAweYvqiqmcEDl3oEJm~zcKbKPeYkD76V3Rw2FCOw5aAg--ERihUY6Pn9MA~6SUHPia38NzD4kvUtqh-d9nqcMeBoCTWHt-xPANYUCFYZYFtjJiOqxcC0iNcfRTSn636f9TMQ__&Key-Pair-Id=APKAI7S6A5RYOXBWRPDA"
