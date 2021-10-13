@@ -44,7 +44,9 @@
 	- 10X Genomics explanation about what mkgtf and mkref do: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/references
 	- Your fasta and gtf files must be compatible with STAR (Ensembl's are compatible). Cellranger uses STAR to index the genome.
 	- mkgtf will filter the gtf file and mkref will index the genome.
-- I have given the script below you will just have to edit the header and paths.  Learn from this example because you will be creating your own scripts after this.
+- I have given the script/job below you will just have to **edit the header and paths**.  Learn from this example because you will be creating your own scripts after this.
+	- Remember you can create and edit a script in your local text editor.  Then you can create and copy/paste the file using the vi text editor built in to your terminal.
+	- Store all your scripts in the **scripts/** folder. 
 	- Mayo job submission resource: https://mctools.sharepoint.com/teams/DCISSS/HPCServices/SitePages/Submit%20job.aspx 
   ```
   #!/bin/sh
