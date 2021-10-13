@@ -1,5 +1,5 @@
 # 1. Create a new project folder
-- Make sure you are in your m-folder on the cluster
+- NOTE: Make sure you are in your m-folder on the cluster
 - Create a new project folder that we will do all our work in.  Feel free to name in whatever you want.  Then, cd into it.
   ```
   mdkir pigs_single_cell
