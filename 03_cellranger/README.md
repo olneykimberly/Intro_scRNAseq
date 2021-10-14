@@ -95,7 +95,15 @@
   cellranger mkref --genome=cellranger_genomeDir --fasta=Sus_scrofa.Sscrofa11.1.dna.toplevel.fa --genes=Sscrofa11.1.104.filteredCellranger.gtf
   ```
 ## 4. Cellranger count
-- Below is the usage for cellranger count. Keep in mind we have two samples so you will have to create two separate scripts.  You could submit it all on one script but each sample take 5 hours.  So we will submit these jobs in parallel to avoid taking 10 hours!
+- Below is the usage for cellranger count. 
+	- Keep in mind we have two samples so you will have to create two separate scripts.  
+	- You could submit it all on one script but each sample take 5 hours.  
+	- So we will submit these two jobs in parallel to avoid taking 10 hours!
+
+- Remember
+	- create a header
+	- source your .bash_profile (so the cluster knows the path to cellranger)
+	- cd into the folder you want to be in or provide the absolute path to all folders/files
   ```
   # run cellranger count on a single sample
   cellranger count --id=sample_id --sample=sample_id --fastqs=/path/to/data/folder --transcriptome=/path/to/genomeDir --localcores=16 --localmem=50
