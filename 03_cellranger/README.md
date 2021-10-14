@@ -108,7 +108,7 @@
 	- create a header
 	- source your .bash_profile (so the cluster knows the path to cellranger)
 	- cd into the folder you want to be in or provide the absolute path to all folders/files
-		- the output generated will in whatever folder you are in
+		- the output generated will be put in whatever folder you are in
 		- if you want count output in your count folder, make sure to go there first
 		- you will then have to provide the absolute path for other arguments
 	- Do NOT include the carrots (< >) that are in the usage. You should replace this with your input.
