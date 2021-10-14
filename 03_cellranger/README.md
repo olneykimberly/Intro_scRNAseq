@@ -98,7 +98,7 @@
   ```
   find . -size 0 -delete
   ```
-  - the command is find, . means our current directory we are in, -size is a option/flag, 0 is the argument passed to the flag, -delete is another option/flag
+  - the command is find, . means the current directory we are in, -size is a option/flag, 0 is the argument passed to the flag, -delete is another option/flag
 ## 4. Cellranger count
 - Below is the usage for cellranger count. 
 	- Keep in mind we have two samples so you will have to create two separate scripts.  
