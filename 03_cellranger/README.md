@@ -104,6 +104,8 @@
 	- create a header
 	- source your .bash_profile (so the cluster knows the path to cellranger)
 	- cd into the folder you want to be in or provide the absolute path to all folders/files
+
+- Cellranger count documentation: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count
   ```
   # run cellranger count on a single sample
   cellranger count --id=sample_id --sample=sample_id --fastqs=/path/to/data/folder --transcriptome=/path/to/genomeDir --localcores=16 --localmem=50
