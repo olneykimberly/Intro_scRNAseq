@@ -104,14 +104,15 @@
 	- create a header
 	- source your .bash_profile (so the cluster knows the path to cellranger)
 	- cd into the folder you want to be in or provide the absolute path to all folders/files
+	- Do NOT include the carrots (< >) that are in the usage. You should replace this with your input.
 
 - Cellranger count documentation: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count
   ```
   # run cellranger count on a single sample
-  cellranger count --id=sample_id --sample=sample_id --fastqs=/path/to/data/folder --transcriptome=/path/to/genomeDir --localcores=16 --localmem=50
+  cellranger count --id=<unique_id> --sample=<fastq_prefix> --fastqs=</path/to/fastq/folder> --transcriptome=</path/to/genomeDir> --localcores=16 --localmem=50
 	
-   # --id is the sample_id (e.g. E19_BB)
-   # --sample is the the prefix cellranger will look for in all the fastq files.  We named all files just like the sampe_id.
+   # --id is a unique run id, we use sample_id (e.g. E19_BB)
+   # --sample is the the unique prefix cellranger will look for in all the fastq files.  Remember we sequence over multiple lanes.  So they must know what files are related.
    # --fastqs is the path to the entire FOLDER containing scRNA fastq files.  The path to files you will be using is in the 02_getData step. 
    # --transcriptome is the path to the pig reference genome. This was created in the prior step.  We named it cellranger_genomeDir.
    # --localcores will restrict cellranger to 16 cores    
