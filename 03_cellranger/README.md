@@ -100,6 +100,10 @@
   ```
   - the command is find, . means the current directory we are in, -size is a option/flag, 0 is the argument passed to the flag, -delete is another option/flag
 ## 4. Cellranger count
+- Our fastq files are stored here
+  ```
+  /research/labs/neurology/fryer/m214960/practice_single_cell
+  ```
 - Below is the usage for cellranger count. 
 	- Keep in mind we have two samples so you will have to create two separate scripts.  
 	- You could submit it all on one script but each sample take 5 hours.  
@@ -113,7 +117,6 @@
 		- you will then have to provide the absolute path for other arguments
 	- Do NOT include the carrots (< >) that are in the usage. You should replace this with your input.
 - Cellranger count documentation: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count
-- File location: **/research/labs/neurology/fryer/m214960/practice_single_cell**
   ```
   # run cellranger count on a single sample
   cellranger count --id=<unique_id> --sample=<fastq_prefix> --fastqs=</path/to/fastq/folder> --transcriptome=</path/to/genomeDir> --localcores=16 --localmem=50
