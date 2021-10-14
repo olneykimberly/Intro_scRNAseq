@@ -94,6 +94,11 @@
   # now that you have created a filtered gene annotation file, you can build the reference index
   cellranger mkref --genome=cellranger_genomeDir --fasta=Sus_scrofa.Sscrofa11.1.dna.toplevel.fa --genes=Sscrofa11.1.104.filteredCellranger.gtf
   ```
+- Since we ran a threaded job, you will get LOTS of output files.  A lot of these are empty and annoying.  Here is a quick command to delete all empty files in you current directory.  This way you don't have to go through and view each one to see if it contains anything.
+  ```
+  find . -size 0 -delete
+  ```
+  - the command is find, . means our current directory we are in, -size is a option/flag, 0 is the argument passed to the flag, -delete is another option/flag
 ## 4. Cellranger count
 - Below is the usage for cellranger count. 
 	- Keep in mind we have two samples so you will have to create two separate scripts.  
