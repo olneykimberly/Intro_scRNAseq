@@ -104,13 +104,11 @@
 	- Keep in mind we have two samples so you will have to create two separate scripts.  
 	- You could submit it all on one script but each sample take 5 hours.  
 	- So we will submit these two jobs in parallel to avoid taking 10 hours!
-
 - Remember
 	- create a header
 	- source your .bash_profile (so the cluster knows the path to cellranger)
 	- cd into the folder you want to be in or provide the absolute path to all folders/files
 	- Do NOT include the carrots (< >) that are in the usage. You should replace this with your input.
-
 - Cellranger count documentation: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count
   ```
   # run cellranger count on a single sample
