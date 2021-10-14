@@ -111,7 +111,7 @@
   # run cellranger count on a single sample
   cellranger count --id=<unique_id> --sample=<fastq_prefix> --fastqs=</path/to/fastq/folder> --transcriptome=</path/to/genomeDir> --localcores=16 --localmem=50
 	
-   # --id is a unique run id, we use sample_id (e.g. E19_BB)
+   # --id is a unique run id, we use how we have been naming samples (e.g. E19_BB)
    # --sample is the the unique prefix cellranger will look for in all the fastq files.  Remember we sequence over multiple lanes.  So they must know what files are related.
    # --fastqs is the path to the entire FOLDER containing scRNA fastq files.  The path to files you will be using is in the 02_getData step. 
    # --transcriptome is the path to the pig reference genome. This was created in the prior step.  We named it cellranger_genomeDir.
