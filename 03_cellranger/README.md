@@ -113,7 +113,7 @@
 		- you will then have to provide the absolute path for other arguments
 	- Do NOT include the carrots (< >) that are in the usage. You should replace this with your input.
 - Cellranger count documentation: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count
-- File location: /research/labs/neurology/fryer/m214960/practice_single_cell
+- File location: **/research/labs/neurology/fryer/m214960/practice_single_cell**
   ```
   # run cellranger count on a single sample
   cellranger count --id=<unique_id> --sample=<fastq_prefix> --fastqs=</path/to/fastq/folder> --transcriptome=</path/to/genomeDir> --localcores=16 --localmem=50
