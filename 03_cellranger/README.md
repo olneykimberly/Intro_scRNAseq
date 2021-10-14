@@ -113,7 +113,7 @@
 	
    # --id is a unique run id, we use how we have been naming samples (e.g. E19_BB)
    # --sample is the the unique prefix cellranger will look for in all the fastq files.  Remember we sequence over multiple lanes.  So they must know what files are related.
-   # --fastqs is the path to the entire FOLDER containing scRNA fastq files.  The path to files you will be using is in the 02_getData step. 
+   # --fastqs is the path to the entire FOLDER containing scRNA fastq files.  The path to the folder you will be using is in the 02_getData step. 
    # --transcriptome is the path to the pig reference genome. This was created in the prior step.  We named it cellranger_genomeDir.
    # --localcores will restrict cellranger to 16 cores    
    # --localmem will restrict cellranger to 50G memory which is need in order to run, else you will receive the error of limited mem issue
