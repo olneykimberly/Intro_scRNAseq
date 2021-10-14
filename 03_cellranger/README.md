@@ -124,17 +124,21 @@
    # --localmem will restrict cellranger to 50G memory which is need in order to run, else you will receive the error of limited mem issue
   ```
 ## 5. Cellranger aggr
-- The cellranger aggr command is used to pool/aggregate cellranger count runs
-  - For example, we can pool all blood samples together
-- Create a libraries.csv file
-  - Two required columns are sample_id and molecule_h5.  The molecule_h5 column is the path to the molecule_info.h5 file output by cellranger counts.
-  - Optional metadata columns can be added and later viewed in the Loupe browser (e.g. treatment, timepoint)
-- The cellranger aggr command inputs a CSV file (containing paths to molecule_info.h5 files) and outputs a single feature-barcode matrix containing all the data
+- Documentation: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/aggregate
+- The cellranger aggr command is used to pool/aggregate cellranger count runs.
+	- Like pooling our two blood samples together.
+	- This way we only need one data file. 
+- aggr does some processing and normalization so you can view data quickly in the Loupe Browser.
 - When multiple GEM wells are combined a GEM well suffix is appended to the barcode sequence
 - GEM wells are subsampled and have the same effective sequencing depth
-
-
+- The command requires you to create a libraries.csv file
+  - Two required columns are sample_id and molecule_h5.  
+  	- The molecule_h5 column is the path to the molecule_info.h5 file output by cellranger counts.
+  - Optional metadata columns can be added and later viewed in the Loupe browser (e.g. treatment, timepoint, sex)
+- The cellranger aggr command inputs the CSV file (containing paths to molecule_info.h5 files) and generates a variety of output including our .cloupe file so we can view clusters in the Loupe Browser
+- Keep in mind this is like a quick tool to view your data.  We are still going to view a more raw version of our counts data in R.
 ## 6. Loupe Browser
-- Read in individual .cloupe files from cellranger count or .cloupe files from cellranger aggr (like pooled E. coli final blood)
+- Read in individual .cloupe files from cellranger count or .cloupe files from cellranger aggr
+- How to download: https://support.10xgenomics.com/single-cell-gene-expression/software/visualization/latest/installation
 
 
