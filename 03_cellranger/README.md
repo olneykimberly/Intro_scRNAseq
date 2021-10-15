@@ -143,7 +143,32 @@
 - The cellranger aggr command inputs the CSV file (containing paths to molecule_info.h5 files) and generates a variety of output including our .cloupe file so we can view clusters in the Loupe Browser
 - Keep in mind this is like a quick tool to view your data.  We are still going to view a more raw version of our counts data in R.
 ## 6. Loupe Browser
-- Read in individual .cloupe files from cellranger count or .cloupe files from cellranger aggr
-- How to download: https://support.10xgenomics.com/single-cell-gene-expression/software/visualization/latest/installation
+- Your cellranger aggr output will contain .cloupe files that you can view in the Loupe Browser.
+- Download the Loupe Browser on your local computer.
+	- https://support.10xgenomics.com/single-cell-gene-expression/software/visualization/latest/installation 
+- Transfer your .cloupe file from the cluster to your local computer.
+	- We will use the scp command to do this which stands fore secur copy.
+	- There are two arguments passed this command.
+		- First, where your file is currently located.
+		- Second, where you want your file to go.
+	- **IMPORTANT**: You have to run this command on your local computer.  So, pull up a separate tab or window for your terminal when executing this command.
+		- The command will work if you do this on the cluster.
+	- If we have to run this command on our local computer, how will the command know your file is actually located on a cluster? 
+		- You might notice that when you login to the cluster you terminal displays something like this: m214960@mforgehn1.
+		- m214960@mforgehn1 is actually specifying user@host. Our username is our m-number and the host is mforgehn1.
+		- We specify file location on a cluster like so
+			- user@host:/path/to/file
+	- After we run our command you will be prompted to enter you RSA passcode.  Similar to when you first login to the cluster
+- Usage
+  ```
+  scp <currentl/location/of/file> <where/you/want/to/move/file>
+  ```
+- Example
+  ```
+  scp m214960@mforgehn1:/research/labs/neurology/fryer/m214960/aggr/output/cloupe.cloupe /Users/m214960/Downloads/sample.cloupe
+  ```
+  - Note: When providing the path of where you want to move the file, you have an opportunity to rename it.  I could have specified something like /Users/m214960/Downloads/E19_BB.cloupe
+
+
 
 
