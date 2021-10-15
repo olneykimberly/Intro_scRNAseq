@@ -145,7 +145,7 @@
 ## 6. Loupe Browser
 - Your cellranger aggr output will contain .cloupe files that you can view in the Loupe Browser.
 - Download the Loupe Browser on your local computer.
-	- https://support.10xgenomics.com/single-cell-gene-expression/software/visualization/latest/installation 
+	- https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest
 - Transfer your .cloupe file from the cluster to your local computer.
 	- We will use the scp command to do this which stands fore secur copy.
 	- There are two arguments passed this command.
