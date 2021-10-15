@@ -148,7 +148,7 @@
 	- https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest
 - Transfer your .cloupe file from the cluster to your local computer.
 	- We will use the scp command to do this which stands fore secure copy.
-	- There are two arguments passed this command.
+	- There are two arguments passed to this command.
 		- First, where your file is currently located.
 		- Second, where you want your file to go.
 	- **IMPORTANT**: You have to run this command on your local computer.  So, pull up a separate tab or window for your terminal when executing this command.
