@@ -147,7 +147,7 @@
 - Download the Loupe Browser on your local computer.
 	- https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest
 - Transfer your .cloupe file from the cluster to your local computer.
-	- We will use the scp command to do this which stands fore secur copy.
+	- We will use the scp command to do this which stands fore secure copy.
 	- There are two arguments passed this command.
 		- First, where your file is currently located.
 		- Second, where you want your file to go.
