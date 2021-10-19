@@ -167,7 +167,7 @@
   ```
   scp m214960@mforgehn1:/research/labs/neurology/fryer/m214960/aggr/output/cloupe.cloupe /Users/m214960/Downloads/sample.cloupe
   ```
-- Windows users will have something like this
+- Windows users will have something like this - EDITING CURRENTLY -
   ```
   scp m214960@mforgehn1:/research/labs/neurology/fryer/m214960/aggr/output/cloupe.cloupe /Users/m214960/Downloads/sample.cloupe
   ```
