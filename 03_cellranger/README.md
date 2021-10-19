@@ -167,6 +167,10 @@
   ```
   scp m214960@mforgehn1:/research/labs/neurology/fryer/m214960/aggr/output/cloupe.cloupe /Users/m214960/Downloads/sample.cloupe
   ```
+- Windows users will have something like this
+  ```
+  scp m214960@mforgehn1:/research/labs/neurology/fryer/m214960/aggr/output/cloupe.cloupe /Users/m214960/Downloads/sample.cloupe
+  ```
   - Note: When providing the path of where you want to move the file, you have an opportunity to rename it.  I could have specified something like /Users/m214960/Downloads/E19_BB.cloupe
 
 
